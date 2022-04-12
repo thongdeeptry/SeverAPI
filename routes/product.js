@@ -32,7 +32,7 @@ router.post('/', [upload.single('image')],[authen.checkLogin], async function (r
   let { body, file } = req;
   let image = '';
   if (file) {
-    image = `http://192.168.1.9:7000/images/${file.filename}`;
+    image = `https://severnodejsreactnative.herokuapp.com/images/${file.filename}`;
   }
   body = { ...body, image };
   await productController.insert(body);
@@ -89,7 +89,7 @@ router.post('/:id/edit', [upload.single('image')],[authen.checkLogin], async fun
   let { params, file, body } = req;
   delete body.image;
   if (file) {
-    let image = `http://192.168.1.9:7000/images/${file.filename}`;
+    let image = `https://severnodejsreactnative.herokuapp.com/images/${file.filename}`;
     body = { ...body, image };
   }
   
