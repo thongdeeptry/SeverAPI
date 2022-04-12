@@ -60,5 +60,6 @@ const productController = require('../component/products/controller');
     const id = req.params;
     const product = await productController.getById(id);
     res.json(product);
+    console.log(product);
   });
 module.exports = router;
