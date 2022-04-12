@@ -52,7 +52,7 @@ const productController = require('../component/products/controller');
   router.get('/products',[authen.checkToken], async function (req, res, next) {
     // lấy danh sách sản phẩm
     const products = await productController.getProducts();
-    res.json({products});
+    res.json(products);
   });
 
   router.get('/products/:id/detail',[authen.checkToken], async function (req, res, next) {
