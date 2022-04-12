@@ -37,8 +37,8 @@
     }
      return product;
  }
- exports.insertcard = async (user_id,name,price,quantity,image,description,category_id,released) => {
-    await productService.insertCard(user_id,name,price,quantity,image,description,category_id,released);             
+ exports.insertcard = async (user_id,name,price,quantity,image,description,released) => {
+    await productService.insertCard(user_id,name,price,quantity,image,description,released);             
 }
  exports.insert = async (body) => {
      await productService.insert(body);             

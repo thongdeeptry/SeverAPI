@@ -22,9 +22,9 @@ const cardModel = require('./cardmodel');
     return product;
   }
   
-  exports.insertCard = async (user_id,name,price,quantity,image,description,category_id,released) => {
-    const p = new cardModel({user_id,name,price,quantity,image,description,category_id,released});
-    await p.save();
+  exports.insertCard = async (user_id,name,price,quantity,image,description,released) => {
+    const p = new cardModel({user_id,name,price,quantity,image,description,released});
+    return await p.save();
     
  }
   /**

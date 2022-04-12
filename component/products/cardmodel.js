@@ -10,8 +10,7 @@ const cardSchema = new Schema({
     quantity: { type: Number },
     image: { type: String },
     description: { type: String },
-    category_id: { type: Schema.Types.ObjectId, ref: 'category' },
-    released: { type: Date },
+    released: { type: Date }
 });
 
 module.exports = mongoose.model('card', cardSchema);
