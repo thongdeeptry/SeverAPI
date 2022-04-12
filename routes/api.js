@@ -59,7 +59,7 @@ const productController = require('../component/products/controller');
     // lấy danh sách sản phẩm
     const id = req.params;
     const product = await productController.getById(id);
-    res.json(product);
+    res.json({product});
     console.log(product);
   });
 module.exports = router;
