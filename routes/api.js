@@ -22,10 +22,10 @@ const productController = require('../component/products/controller');
     // kiểm tra email, password
     const result = await userController.register(email,password,cf_password);
     if (result) {
-     res.json({status:true});
-    } else {
-        res.json({status:false});
-    }
+      res.json({status:true});
+     } else {
+         res.json({status:false});
+     }
   });
   
   router.post('/login', async function (req, res, next) {
@@ -61,5 +61,16 @@ const productController = require('../component/products/controller');
     const product = await productController.getById(id);
     res.json(product);
     console.log(product);
+  });
+
+  router.post('/card', async function (req, res, next) {
+    // lấy danh sách sản phẩm
+    const {user_id,name,price,quantity,image,description,category_id,released} = req.body;
+    const result = await productController.insertcard(user_id,name,price,quantity,image,description,category_id,released);
+    if (result) {
+      res.json({status:true});
+     } else {
+      res.json({status:false});
+     }
   });
 module.exports = router;

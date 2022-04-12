@@ -1,5 +1,6 @@
 
 const productModel = require('./model');
+const cardModel = require('./cardmodel');
 /**
  * service: tầng giao tiếp với database
  */
@@ -21,7 +22,11 @@ const productModel = require('./model');
     return product;
   }
   
-  
+  exports.insertCard = async (user_id,name,price,quantity,image,description,category_id,released) => {
+    const p = new cardModel({user_id,name,price,quantity,image,description,category_id,released});
+    await p.save();
+    
+ }
   /**
    * thêm mới sản phẩm
    */
