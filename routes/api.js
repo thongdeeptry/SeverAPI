@@ -57,9 +57,9 @@ const productController = require('../component/products/controller');
 
   router.get('/products/:id/detail',[authen.checkToken], async function (req, res, next) {
     // lấy danh sách sản phẩm
-    const id = req.params;
+    const {id} = req.params;
     const product = await productController.getById(id);
-    res.json({product});
+    res.json(product);
     console.log(product);
   });
 module.exports = router;
