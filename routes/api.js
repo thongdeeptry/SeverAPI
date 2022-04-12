@@ -65,8 +65,8 @@ const productController = require('../component/products/controller');
 
   router.post('/card', async function (req, res, next) {
     // lấy danh sách sản phẩm
-    const {user_id,name,price,quantity,image,description,category_id,released} = req.body;
-    const result = await productController.insertcard(user_id,name,price,quantity,image,description,category_id,released);
+    const {user_id,name,price,quantity,image,description,released} = req.body;
+    const result = await productController.insertcard(user_id,name,price,quantity,image,description,released);
     if (result) {
       res.json({status:true});
      } else {
