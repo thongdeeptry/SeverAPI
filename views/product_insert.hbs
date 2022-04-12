@@ -1,0 +1,87 @@
+<div class="col-lg-6" style="width: 100%;height:100%;margin-top:60;float:right;">
+
+    <div class="card card-small mb-4">
+      <div class="card-header border-bottom">
+        <h4 class="m-0" >Thêm 1 Sản Phẩm</h4>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item p-3">
+          <div class="row">
+            <div class="col">
+        <form role="form" action="/sanpham" method="post" 
+                    enctype="multipart/form-data">
+            
+
+
+            <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label>Name</label>
+                                    <input onchange="validation()" type="text" id="name" name="name" class="form-control" required="true">
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label>Price</label>
+                    <input onchange="validation()" type="text" id="price" name="price" class="form-control" required="true">
+                  </div>
+                     <div class="form-group col-md-12">
+                    <label>Quantity</label>
+                                    <input onchange="validation()" type="text" id="quantity" name="quantity" class="form-control" required="true">
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label>Image</label>
+                                    <input onchange="onChangeFile();" type="file" id="image-file" name="image" class="form-control" >
+                                    
+    <img style="display: none;"  id="image-view" width="200" height="200"/>
+                  </div>
+                  <div class="form-group col-md-12" >
+                <label>Description</label>
+                <textarea class="form-control" rows="3"
+                    name="description" required="true"></textarea>
+            </div>
+            
+            <div class="form-group col-md-12">
+                <label>Category</label>
+                <select class="form-control" name="category_id">
+                    {{#each categories}}
+                    <option value="{{this._id}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="form-group col-md-12">
+                <label>Released</label>
+                <input onchange="validation()" class="form-control" id="released" type="date"  name="released" required="true">
+            </div>
+                <br>
+               <button style="margin-left: 20px;" type="submit" id="submit"  class="btn btn-primary ">Submit</button>
+            <button type="reset" class="btn btn-success">Reset</button>
+        </form>
+    </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+<script>
+  const validation = ()=>{
+    const name = document.getElementById('name').value;
+    const price = document.getElementById('price').value;
+    const quantity = document.getElementById('quantity').value;
+    const released= document.getElementById('released').value;
+    const submit= document.getElementById('submit');
+    if(!name||name.trim().length==0){
+      submit.disabled = true;
+    }else{
+      submit.disabled = false;
+    }
+  }
+    const onChangeFile = () => {
+        const file = document.getElementById('image-file').files[0];
+        const reader = new FileReader();
+        reader.onload = e => {
+            document.getElementById('image-view').src = e.target.result;
+            document.getElementById('image-view').style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+    }
+</script>

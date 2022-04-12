@@ -1,0 +1,147 @@
+<div class="page-header row no-gutters py-4">
+    <div class="col-12 col-sm-12 text-center text-sm-left mb-0">
+     
+      <div class="block">
+<svg class="eyes" xmlns="http://www.w3.org/2000/svg" width="200" height="54" viewBox="0 0 144 44" fill="none">
+<mask id="mask0_1_48" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="69" height="44">
+<path d="M1 1C1 51.5333 45 46.1191 67 37.0952L1 1Z" fill="#FFFF00" stroke="black"/>
+</mask>
+<g class="eye-left" mask="url(#mask0_1_48)">
+<path class="eye-left__socket" d="M1 1C1 51.5333 45 46.1191 67 37.0952L1 1Z" fill="#FFFF00" stroke="black"/>
+<path class="eye-left__iris" d="M45 29C45 35.6274 42.3137 41 39 41C35.6863 41 33 35.6274 33 29C33 22.3726 35.6863 17 39 17C42.3137 17 45 22.3726 45 29Z" fill="black"/>
+<path class="eye-left__apple" d="M41 30C41 33.866 40.1046 37 39 37C37.8954 37 37 33.866 37 30C37 26.134 37.8954 23 39 23C40.1046 23 41 26.134 41 30Z" fill="white"/>
+</g>
+<mask id="mask1_1_48" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="75" y="0" width="69" height="44">
+<path d="M143 1C143 51.5333 99 46.1191 77 37.0952L143 1Z" fill="#FFFF00" stroke="black"/>
+</mask>
+<g class="eye-right" mask="url(#mask1_1_48)">
+<path class="eye-right__socket" d="M143 1C143 51.5333 99 46.1191 77 37.0952L143 1Z" fill="#FFFF00" stroke="black"/>
+<path class="eye-right__iris" d="M99 29C99 35.6274 101.686 41 105 41C108.314 41 111 35.6274 111 29C111 22.3726 108.314 17 105 17C101.686 17 99 22.3726 99 29Z" fill="black"/>
+<path class="eye-right__apple" d="M103 30C103 33.866 103.895 37 105 37C106.105 37 107 33.866 107 30C107 26.134 106.105 23 105 23C103.895 23 103 26.134 103 30Z" fill="white"/>
+</g>
+</svg>
+</div>
+
+<script>const leftEye = {
+iris: document.querySelector('.eye-left__iris'),
+apple: document.querySelector('.eye-left__apple'),
+};
+
+const rightEye = {
+iris: document.querySelector('.eye-right__iris'),
+apple: document.querySelector('.eye-right__apple'),
+};
+
+const params = {
+eyes: document.querySelector('.eyes').getBoundingClientRect(),
+irisActiveX: 35,
+irisActiveY: 10,
+}
+
+const eyesCenterX = params.eyes.left + params.eyes.width / 2
+
+const eyesCenterY = params.eyes.top + params.eyes.height / 2
+
+window.addEventListener('mousemove', function(e) {
+let offsetMouseX = e.clientX - eyesCenterX
+let offsetMouseY = e.clientY - eyesCenterY
+
+let deltaX = window.innerWidth / params.irisActiveX
+let deltaY = window.innerHeight / params.irisActiveY
+
+let offsetEyeX = offsetMouseX / deltaX
+let offsetEyeY = offsetMouseY / deltaY
+
+eyeMove(offsetEyeX, offsetEyeY)
+});
+
+function eyeMove(offsetEyeX, offsetEyeY) {
+rightEye.iris.style = `transform: translate(${offsetEyeX}px, ${offsetEyeY}px)`
+leftEye.iris.style = `transform: translate(${offsetEyeX}px, ${offsetEyeY}px)`
+rightEye.apple.style = `transform: translate(${offsetEyeX}px, ${offsetEyeY}px)`
+leftEye.apple.style = `transform: translate(${offsetEyeX}px, ${offsetEyeY}px)`
+}
+
+function debounce(func, ms) {
+let timer = new Date() + ms;
+
+return function () {
+if (new Date() - timer < ms) {
+return
+} else {
+timer = new Date()
+func.apply(this, arguments)
+}
+}
+}</script>
+    </div>
+  </div>
+  
+              
+<style>
+ 
+a{
+    width:100%;
+    color: #fff;
+  text-align: center;
+  margin-left:30%;
+  margin-right:25%;
+  padding-top:55px;
+}
+h4{
+    width:100%;
+    color: #fff;
+  text-align: center;
+  margin-left:5%;
+  margin-right:5%;
+  padding-top:55px;
+}
+</style>
+
+<div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+              <div class="login-box">
+  <h4>Đăng Ký Hệ Thống</h4>
+                          
+  <form action="includes/post.php" method="POST">
+    <div class="user-box">
+     
+                                <input type="text" required name="username">
+                                 <label>Tài Khoản</label>
+    </div>
+    <div class="user-box">
+     
+       
+                                <input type="text" required name="ten">
+                                <label>Họ Và Tên</label>
+                                
+    </div>
+     <div class="user-box">
+        
+                                <input type="email" required  name="email">
+                                 <label>Email</label>
+    </div>
+     <div class="user-box">
+                                <input type="password"  required name="password">
+                                         <label>Mật Khẩu</label>
+
+    </div>
+     <div class="user-box">
+        
+                                <input type="password" required  name="rpassword">
+                                 <label>Xác Minh Mật Khẩu</label>
+    </div>
+    
+    <button type="submit" name="dangky" href="">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Tạo Tài Khoản
+      
+    </button><br>
+    <a  href="/index.php">Đã có tài khoản?</a>
+  </form>
+</div>

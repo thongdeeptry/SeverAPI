@@ -1,0 +1,315 @@
+
+ 
+    <script>
+        var slx = localStorage.getItem("soLan");
+        if (slx == null) slx = 0;
+        slx++;
+        localStorage.setItem("soLan", slx);
+    </script>
+    <script>
+        function openNav() {
+            document.getElementById("menu").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+         
+        function closeNav() {
+            document.getElementById("menu").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+        </script>
+        <style>
+            body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.tong {
+    max-width: 1349px;
+    
+    margin: 0 auto;
+}
+
+#menu>ul>li>a {
+    text-decoration: none;
+    font-variant: none;
+    text-align:left;
+    font-size: 17px;
+    color: rgb(240, 239, 239);
+    line-height: 40px;
+}
+.mau{
+    text-decoration: none;
+    font-variant: initial;
+    font-size: 17px;
+ 
+    line-height: 40px;
+}
+.mau1{
+    text-decoration: none;
+    font-variant: initial;
+    font-size: 17px;
+    
+    line-height: 30px;
+}
+
+#menu ul li a:hover {
+    color: yellow;
+}
+
+#menu>ul>li {
+    display: inline-block
+}
+#menu>ul>li>a {
+    display: block
+}
+
+#menu>ul>li {
+    display: inline-block;
+}
+
+#menu ul ul {
+    display: none;
+}
+
+#menu ul>li:hover>ul {
+
+    
+    display: block;
+    
+}
+.user{
+    margin-bottom:20px;
+    color:red;
+}
+.user:hover{
+    color:orange;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(27, 27, 27);
+    overflow-x: hidden;
+    padding-top: 30px;
+    transition: 0.5s;
+}
+#menu>a{
+    color:orange;
+    
+}
+#menu>a:hover{
+    color:red;
+    
+}
+.sidenav>ul>li>a {
+    padding: 5px 5px 5px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #d1cbcb;
+    display: block;
+    transition: 0.3s
+}
+.sidenav>ul>li>a:hover, .offcanvas a:focus{
+    color: orange;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 35px;
+    margin-left: 50px;
+}
+
+.topnav {
+    background-color: rgba(0,0,0,0.75);
+    overflow: hidden;
+    height:50px;
+}
+.topnav a {
+    float: left;
+    display: block;
+    color: #c5c5c5;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+
+.tong>article {
+    margin-top: 10px;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    float: right;
+    border-bottom: 2px inset rgb(221, 218, 218);
+}
+
+
+
+.tong>aside:hover {
+    color: lime;
+}
+
+.menu2 {
+    box-shadow: 0 0 2px gray;
+    background-color: rgb(47 46 46);
+    border-radius: 5px;
+   
+}
+
+.menu2 a {
+    text-align:left;
+    float:left;
+    width:100%;
+    color: #49ca88;
+    text-size:15px;
+
+}
+
+.menu2 a:hover {
+    color: orange;
+
+}
+
+.top-right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 20px;
+    padding-left: 20px;
+}
+
+.top-right>a:hover {
+    color: gold
+}
+
+.phai {
+    float: right;
+    background-color: #a40000;
+    padding-left: 30px;
+    text-decoration: none;
+    font-variant: small-caps;
+    font-size: larger;
+    color: white;
+    padding: 0 10px;
+    line-height: 40px;
+}
+
+.phai:hover {
+    color: gold;
+}
+iframe[name=thong]{
+    width: 100%;
+    min-height: 700px;
+}
+
+        </style>
+
+
+
+
+    <div class="tong">
+        <div id="menu" class="sidenav">
+            
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class="menu2">
+            <li>
+                    <a href="#"><img src="https://cdn0.iconfinder.com/data/icons/essentials-marketing-2-1/128/menu-hambuger-settings-list-20.png"/>  Quản Lý Chung</a>
+                    <ul class="mau">
+                        <li><a href="chinhsua" target="thong"><img src="https://cdn4.iconfinder.com/data/icons/e-commerce-and-marketing-essentials/128/profile-20.png"/>  Sửa thông tin</a></li>
+                       
+             <li><a href="/dang-xuat"><img src="https://cdn0.iconfinder.com/data/icons/essentials-marketing-2-1/128/exit-door-log-out-20.png"/>  Đăng xuất</a></li>
+                     
+                    </ul>
+                </li>
+                </ul>
+            <ul class="menu2">
+                <li>
+                <li><a href="/" ><img src="https://cdn4.iconfinder.com/data/icons/online-shop-7/128/home-house-20.png"/>  Trang chủ</a></li>
+                 <li>
+                    <a href="/sanpham" target="thong"><img src="https://cdn1.iconfinder.com/data/icons/online-shop-7/128/shop-store-market-2-20.png"/>  Danh Sách Sản Phẩm</a>
+                    
+                </li>
+                <li>
+                    <a  href="/danhmuc" target="_blank" ><img src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_facebook-16.png"/>  Danh Mục Sản Phẩm</a>
+                    
+                </li>
+<li>
+                    <a  href="/sanpham/insert" target="thong" ><img src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_facebook-16.png"/>  Thêm Mới Sản Phẩm</a>
+                    
+                </li>
+                <li>
+                    <a href="#"><img src="https://cdn4.iconfinder.com/data/icons/e-commerce-and-marketing-essentials/128/customer_service-20.png"/>  Liên hệ hỗ trợ</a>
+                    <ul class="mau">
+                       <li> <a href="https://www.facebook.com/HII.IM.NGOTHANHTHONG/"><img src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_facebook-16.png"/>  Facebook</a></li>
+                        <li><a href="https://www.facebook.com/thongdeeptryofficialnumberone"><img src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_facebook-16.png"/>  FanPage</a></li>
+                    </ul>
+                </li>
+</li>
+            </ul>
+            
+                
+            
+          </div>
+          <nav class="topnav">
+                        
+            <a href="#" onclick="openNav()">
+              <svg width="30" height="30" id="icoOpen">
+                  <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+                  <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+                  <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+              </svg>
+            </a>
+          </nav>
+        <article id="main">
+            
+            <iframe name="thong" src="/sanpham" src="auto" frameborder="0">
+                
+                 </iframe>
+            
+        </article>
+       
+  
+</body>
+
+<script>
+    document.getElementById("solanxem").innerHTML = slx;
+</script>
+<script>
+
+    var img = [];
+    function onLoad(){
+    for (var i = 0; i < 3; i++) {
+        img[i] = new Image();
+        img[i].src = "img/anh" + i + ".png";
+    }
+    }
+    var index = 0;
+    function next() {
+        index++;
+        if (index >= img.length) {
+            index = 0;
+        }
+        var anh = document.getElementById('anh');
+        anh.src = img[index].src;
+        document.getElementById("num").innerHTML = index + 1;
+
+    }
+    setInterval(next,2000);
+    function prev() {
+        index--;
+        if (index < 0) {
+            index = img.length - 1;
+        }
+        var anh = document.getElementById("anh");
+        anh.src = img[index].src;
+        document.getElementById("num").innerHTML = index + 1;
+    }
+</script>
+ 
+ 
