@@ -42,6 +42,7 @@
     data = data.map(item=>{
         item = {item,released: date.format(item.released),
            _id: item._id,
+           id_product:item.id_product,
            user_id:item.user_id,
            name: item.name,
            price: item.price,
