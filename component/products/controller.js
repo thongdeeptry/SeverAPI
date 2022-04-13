@@ -42,7 +42,7 @@
     data = data.map(item=>{
         item = {item,released: date.format(item.released),
            _id: item._id,
-           product_id:item.product_id,
+           id_product:item.id_product,
            user_id:item.user_id,
            name: item.name,
            price: item.price,
@@ -55,8 +55,8 @@
     })
     return data;
 }
- exports.insertcard = async (product_id,user_id,name,price,quantity,image,description,released) => {
-    await productService.insertCard(product_id,user_id,name,price,quantity,image,description,released);             
+ exports.insertcard = async (id_product,user_id,name,price,quantity,image,description,released) => {
+    await productService.insertCard(id_product,user_id,name,price,quantity,image,description,released);             
 }
  exports.insert = async (body) => {
      await productService.insert(body);             

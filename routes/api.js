@@ -72,9 +72,9 @@ const productController = require('../component/products/controller');
   });
   router.post('/card', async function (req, res, next) {
     // lấy danh sách sản phẩm
-    const {product_id,user_id,name,price,quantity,image,description,released} = req.body;
+    const {id_product,user_id,name,price,quantity,image,description,released} = req.body;
    
-    const result = await productController.insertcard(product_id,user_id,name,price,quantity,image,description,released);
+    const result = await productController.insertcard(id_product,user_id,name,price,quantity,image,description,released);
     if (result==true) {
       res.json({status:true});
      } else {
