@@ -23,10 +23,11 @@ const cardModel = require('./cardmodel');
   }
   exports.getByEmail = async (email) => {
     const product = await cardModel.find();
+
     return product;
   }
-  exports.insertCard = async (id_product,user_id,name,price,quantity,image,description,released) => {
-    const p = new cardModel({id_product,user_id,name,price,quantity,image,description,released});
+  exports.insertCard = async (user_id,name,price,quantity,image,description,released) => {
+    const p = new cardModel({user_id,name,price,quantity,image,description,released});
     return await p.save();
     
  }
