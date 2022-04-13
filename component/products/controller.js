@@ -40,7 +40,7 @@
  exports.getByEmail = async (email) => {
     let data = await productService.getByEmail(email);
     data = data.map(item=>{
-        item = {...item,released: date.format(item.released),
+        item = {item,released: date.format(item.released),
            _id: item._id,
            user_id:item.user_id,
            name: item.name,
