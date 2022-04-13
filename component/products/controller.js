@@ -37,6 +37,18 @@
     }
      return product;
  }
+ exports.getByEmail = async (email) => {
+    let product = await productService.getById(email);
+    product = {released: date.format(product.released),
+       user_id: product.user_id,
+       name: product.name,
+       price: product.price,
+       quantity: product.quantity,
+       image: product.image,
+       description: product.description,
+   }
+    return product;
+}
  exports.insertcard = async (user_id,name,price,quantity,image,description,released) => {
     await productService.insertCard(user_id,name,price,quantity,image,description,released);             
 }
