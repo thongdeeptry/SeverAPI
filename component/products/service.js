@@ -21,8 +21,8 @@ const cardModel = require('./cardmodel');
     const product = await productModel.findById(id).populate('category_id');
     return product;
   }
-  exports.getByEmail = async (id) => {
-    const product = await cardModel.findOne(user_id);
+  exports.getByEmail = async (email) => {
+    const product = await cardModel.find({$text:{$search:`${email}`}});
     return product;
   }
   exports.insertCard = async (user_id,name,price,quantity,image,description,released) => {
