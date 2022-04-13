@@ -55,8 +55,8 @@
     })
     return data;
 }
- exports.insertcard = async (user_id,name,price,quantity,image,description,released) => {
-    await productService.insertCard(user_id,name,price,quantity,image,description,released);             
+ exports.insertcard = async (product_id,user_id,name,price,quantity,image,description,released) => {
+    await productService.insertCard(product_id,user_id,name,price,quantity,image,description,released);             
 }
  exports.insert = async (body) => {
      await productService.insert(body);             
