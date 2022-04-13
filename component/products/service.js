@@ -22,7 +22,8 @@ const cardModel = require('./cardmodel');
     return product;
   }
   exports.getByEmail = async (email) => {
-    const product = await cardModel.find(c=>c.user_id==email);
+    const product = await cardModel.find();
+    console.log('lấy ra gmail trong getemail',email);
     return product;
   }
   exports.insertCard = async (user_id,name,price,quantity,image,description,released) => {
