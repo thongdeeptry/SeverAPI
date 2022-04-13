@@ -38,7 +38,7 @@
      return product;
  }
  exports.getByEmail = async (email) => {
-    let product = await productService.getById(email);
+    let product = await productService.getByEmail(email);
     product = {released: date.format(product.released),
        user_id: product.user_id,
        name: product.name,
