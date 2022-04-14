@@ -82,9 +82,10 @@ const productController = require('../component/products/controller');
      }
   });
 
-  router.delete('/delete/:id',[authen.checkLogin], async function (req, res, next) {
+  router.delete('/delete/:id', async function (req, res, next) {
     // xử lý xóa sản phẩm
     const { id } = req.params;
+    console.log('xuat ra id can xoa',id);
     await productController.deleteCartNe(id);
     res.json({ result: true })
   });

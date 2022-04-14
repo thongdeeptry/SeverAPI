@@ -64,7 +64,8 @@
     await productService.delete(id);             
 }
 exports.deleteCartNe = async (id) => {
-    await productService.deleteCart(id);             
+    await productService.deleteCart(id);
+    console.log('xuat ra id cua controler',id)             
 }
 exports.update = async (id,product) => {
     await productService.update(id,product);             
