@@ -63,6 +63,9 @@
  exports.delete = async (id) => {
     await productService.delete(id);             
 }
+exports.deleteCartNe = async (id) => {
+    await productService.deleteCart(id);             
+}
 exports.update = async (id,product) => {
     await productService.update(id,product);             
 }

@@ -43,6 +43,10 @@ const cardModel = require('./cardmodel');
     //data = data.filter(item => item._id != id);
     await productModel.findByIdAndDelete(id);
   }
+  exports.deleteCart = async (id) => {
+    //data = data.filter(item => item._id != id);
+    await cardModel.findByIdAndDelete(id);
+  }
   
   exports.update = async (id,product) => {
     // data = data.map(item =>{
