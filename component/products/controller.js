@@ -13,7 +13,6 @@
             name: item.name,
             price: item.price,
             quantity: item.quantity,
-            
             image: item.image,
             description: item.description,
             category_id: item.category_id,

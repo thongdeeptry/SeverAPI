@@ -81,4 +81,11 @@ const productController = require('../component/products/controller');
       res.json({status:false});
      }
   });
+
+  router.get('/:id/delete',[authen.checkLogin], async function (req, res, next) {
+    // xử lý xóa sản phẩm
+    const { id } = req.params;
+    await productController.delete(id);
+    res.json({ result: true })
+  });
 module.exports = router;
